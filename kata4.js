@@ -26,7 +26,7 @@ var calculateChange = function(total, cash) {
     var leftOver = cash - total;
     console.log("Total change: " + leftOver);
 
-    changeArr = [];
+    var changeObj = {};
 
     var runningTotal = leftOver;
     for(var prop in denominations){
@@ -35,10 +35,10 @@ var calculateChange = function(total, cash) {
             change[prop] += 1;
         }
         if(change[prop] > 0){
-            changeArr += prop + ": " + change[prop] + ", ";
+            changeObj[prop] = change[prop];
         }
     }
-    return changeArr;
+    return changeObj;
 }
 
     
