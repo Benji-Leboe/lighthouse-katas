@@ -30,7 +30,7 @@ var calculateChange = function(total, cash) {
 
     var runningTotal = leftOver;
     for(var prop in denominations){
-        for(var i = 0; runningTotal > denominations[prop] - 1; i++){
+        while(runningTotal > denominations[prop] - 1){
             runningTotal -= denominations[prop];
             change[prop] += 1;
         }
